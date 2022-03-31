@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CPP기본\array.cpp">
+    <ClCompile Include="CPP기본\square_sum.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
