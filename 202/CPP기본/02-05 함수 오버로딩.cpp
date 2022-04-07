@@ -1,3 +1,4 @@
+// cout, endl 객체를 가지고 있음
 #include <iostream>
 
 // std:: 안 써도 됨
