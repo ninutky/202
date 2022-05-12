@@ -18,13 +18,13 @@ public:
 };
 
 int main(void) {
-	Student stu1;
-	Student stu2 = Student();
-	stu1.show();
-	stu2.show();
+	Student* stu1 = new Student();
+	stu1->show();
+	Student* stu2 = new Student(1111, "JWP");
+	stu2->show();
 
-	Student stu3 = { 1111, "JWP" };
-	stu3.show();
+	delete stu1;
+	delete stu2;
 
 	return 0;
 }
