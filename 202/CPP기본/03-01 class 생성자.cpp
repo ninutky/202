@@ -11,7 +11,10 @@ private:
 
 public:
 	// 생성자 : 객체가 생성될 때, 호출되는 함수
+	Student(void);
 	Student(int Hakbun, const char* Name);   //const 없으면 오류남
+	Student(const Student& rhs);
+
 	// 소멸자 : 객체가 메모리에서 해제될 때, 호출되는 함수
 	~Student();
 
@@ -35,6 +38,12 @@ Student::Student(int Hakbun, const char* Name) {
 	strcpy(sName, Name);
 };
 
+Student::Student(const Student& rhs)
+	:nHakbun(rhs.nHakbun), sName(rhs.sName)
+{
+	cout << "복사생성자 호출" << endl;
+};
+
 Student::~Student()
 {
 	delete[]sName;
@@ -45,3 +54,4 @@ void Student::show(void) {
 	cout << "학번은 " << nHakbun << "입니다." << endl;
 	cout << "이름은 " << sName << "입니다." << endl << endl;;
 }
+
