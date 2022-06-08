@@ -5,14 +5,16 @@ using namespace std;
 
 class Person
 {
+private:
+	string sName;	// 이름
+
 public:
 	Person();
 	Person(string name, int age);
 	~Person();
 	void hi();
 
-private:
-	string sName;	// 이름
+protected:
 	int nAge;		// 나이
 };
 
@@ -29,7 +31,6 @@ Person::Person(string name, int age)
 	sName = name;
 	nAge = age;
 	*/
-	
 }
 
 Person::~Person()
@@ -41,7 +42,7 @@ void Person::hi() {
 	cout << "나이: " << nAge << endl;
 }
 
-class Student : public Person
+class Student : private Person
 {
 public:
 	Student();
@@ -63,12 +64,16 @@ Student::Student(string name, int age, int hakbun) : Person(name, age), nHakbun(
 
 void Student :: study() {
 	hi();
-	cout << "" << endl;
+	nAge = 0;
+	cout << nAge << endl;
 }
 
 int main(void) {
 	Person* person = new Person("박나경", 18);	// 동적. 화살표
 	person->hi();
-	Student student;
+
+	Student student;		// 정적. .(dot)
 	student.study();
+	student.hi();
+
 }
