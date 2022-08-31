@@ -28,9 +28,15 @@ public:
 
 void main(void) {
 	// Á¤ÀûÇÒ´ç(½ºÅÃ°ø°£)
-	Animal animal;
-	animal.roar();	// Â¢¾î
+	Animal* animal = new Animal();
+	animal->roar();	// Â¢¾î
+	delete animal;
 
-	Dog dog;
-	dog.roar();		// ¸Û¸Û
+	animal = new Dog();
+	animal->roar();	// ¾îÈï
+	delete animal;
+
+	animal = new Tiger();
+	animal->roar();	// ¸Û¸Û
+	delete animal;
 }
