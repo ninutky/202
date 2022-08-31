@@ -7,7 +7,7 @@ class Animal
 {
 public:
 	Animal() { cout << "Animal 생성" << endl; }
-	~Animal() { cout << "Animal 소멸" << endl; }
+	virtual ~Animal() { cout << "Animal 소멸" << endl; }
 
 	void eat(void) { cout << "먹어" << endl; }
 	// roar함수를 가상함수테이블에 등록(동적 바인딩)
