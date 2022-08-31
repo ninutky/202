@@ -5,11 +5,11 @@ using namespace std;
 
 class m_string {
 private:
-	int _Mysize;
 	char* _Myptr;
+	int _Mysize;
 
 public:
-
+	// 문자열의 글자수를 반환
 	int size() const {
 		return _Mysize-1;
 	}
