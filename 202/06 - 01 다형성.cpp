@@ -3,16 +3,14 @@
 
 using namespace std;
 
-class Animal
-{
+class Animal {
 public:
 	Animal() { cout << "Animal »ý¼º" << endl; }
 	virtual ~Animal() { cout << "Animal ¼Ò¸ê" << endl; }
 
-	void eat(void) { cout << "¸Ô¾î" << endl; }
-	// roarÇÔ¼ö¸¦ °¡»óÇÔ¼öÅ×ÀÌºí¿¡ µî·Ï(µ¿Àû ¹ÙÀÎµù)
-	virtual void roar(void) { cout << "Â¢¾î" << endl; }
-	void walk(void) { cout << "°É¾î" << endl; }
+	virtual void eat(void) = 0;
+	virtual void roar(void) = 0;
+	virtual void walk(void) = 0;
 
 private:
 	string name;
@@ -25,7 +23,9 @@ public:
 	Tiger() { cout << "Tiger »ý¼º" << endl; }
 	virtual ~Tiger() { cout << "Tiger ¼Ò¸ê" << endl; }
 
+	void eat(void) { cout << "È£¶ûÀÌ ÂÁÂÁ" << endl; }
 	void roar(void) override { cout << "¾îÈï" << endl; }
+	void walk(void) { cout << "È£¶ûÀÌ °É¾î" << endl; }
 };
 
 class Dog : public Animal {
@@ -33,11 +33,14 @@ public:
 	Dog() { cout << "Dog »ý¼º" << endl; }
 	virtual ~Dog() { cout << "Dog ¼Ò¸ê" << endl; }
 
-	void roar(void) override { cout << "¸Û¸Û" << endl; }
+	void eat(void) { cout << "°³ ÂÁÂÁ" << endl; }
+	void roar(void) override { cout << "¾îÈï" << endl; }
+	void walk(void) { cout << "°³ °É¾î" << endl; }
 };
 
 void main(void) {
 	// Á¤ÀûÇÒ´ç(½ºÅÃ°ø°£)
 	Animal* animal = new Tiger();
+	animal->eat();
 	delete animal;
 }
