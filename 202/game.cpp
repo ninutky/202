@@ -3,21 +3,17 @@
 
 using namespace std;
 
+template <typename S, typename I>
 class Character {
 private:
-	char* name;
-	int hp;
-	int attack;
-	int defense;
+	S name;
+	I hp;
+	I attack;
+	I defense;
 
 public:
-	Character(void);
-	Character(const char* _name, int _hp, int _attack, int _defense) :
-		hp(_hp), attack(_attack), defense(_defense) {
-		int len = strlen(_name) + 1;
-		name = new char[len];
-		strcpy(name, _name);
-	};
+	Character(S _name, I _hp, I _attack, I _defense) :
+		name(_name), hp(_hp), attack(_attack), defense(_defense) {}
 
 	void show(void) {
 		cout << "이름: " << name << endl;
@@ -26,14 +22,11 @@ public:
 		cout << "방어: " << defense << endl;
 	}
 
-	~Character() {
-		delete[]name;
-	}
-
 };
 
 int main(void) {
-	Character* a = new Character("a", 100, 10, 10);
-	a->show();
+	Character<string, int>* p1 = new Character<string, int>("p1", 100, 10, 10);
+	p1->show();
+	delete p1;
 	return 0;
 }
