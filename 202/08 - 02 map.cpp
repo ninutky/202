@@ -34,6 +34,8 @@ int main(void) {
 
 	map<string, string>::iterator actor = m.find("김신");
 
+	// key가 존재하는지 체크
+	if(actor != m.end())
 	cout << "주인공은 " << actor->second << endl;
 
 	return 0;
