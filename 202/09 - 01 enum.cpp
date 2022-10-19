@@ -7,10 +7,11 @@ enum Food {
 	KOREAN,	// 한식(0)
 	JAPANESE,	// 일식(1)
 	CHINESE,	// 중식(2)
+	COUNT	//총 개수
 };
 
 int main(void) {
-	string food_spot[3];
+	string food_spot[Food::COUNT];
 
 	food_spot[Food::KOREAN] = "삼백집";
 	food_spot[Food::JAPANESE] = "야키토리묵";
