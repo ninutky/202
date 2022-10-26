@@ -24,9 +24,9 @@ int main(void) {
 
 	// 맵의 원소들을 출력
 	// 삽입할 때마다 key는 자동정렬됨
-	for (auto iter = m.begin(); iter != m.end(); iter++)
+	for (auto& x : m)
 	{
-		cout << iter->first << "역 " << iter->second << "분" << endl;
+		cout << x.first << "역 " << x.second << "분" << endl;
 	}
 	cout << endl;
 
