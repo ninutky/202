@@ -22,11 +22,9 @@ int main(void) {
 	m["저승사자"] = "이동욱";
 	m["써니"] = "유인나";
 
-	map<string, string>::iterator iter;
-
 	// 맵의 원소들을 출력
 	// 삽입할 때마다 key는 자동정렬됨
-	for (iter = m.begin(); iter != m.end(); iter++)
+	for (auto iter = m.begin(); iter != m.end(); iter++)
 	{
 		cout << iter->first << "역 " << iter->second << "분" << endl;
 	}
